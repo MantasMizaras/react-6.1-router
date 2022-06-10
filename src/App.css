@@ -26,3 +26,9 @@ img {
   border-radius: 5px;
   padding: 10px 20px;
 }
+.product-image {
+  max-height: 100px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}

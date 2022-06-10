@@ -11,7 +11,7 @@ const ProductPage = () => {
     console.log('getProductsAndSetState ran');
     const respt = await fetch('/db/products.json');
     const dataInJs = await respt.json();
-    console.log('dataInJs ===', dataInJs);
+    // console.log('dataInJs ===', dataInJs);
     // const onlyDataWeNeed = dataInJs.map((pObj) => {
     //   return {
     //     id: pObj.id,
@@ -26,8 +26,8 @@ const ProductPage = () => {
       price,
       image,
     }));
-    console.log('onlyDataWeNeed  ===', onlyDataWeNeed);
-    setProductsArr(dataInJs);
+    // console.log('onlyDataWeNeed  ===', onlyDataWeNeed);
+    setProductsArr(onlyDataWeNeed);
   };
 
   useEffect(() => {
@@ -41,7 +41,16 @@ const ProductPage = () => {
       <h1>Our products</h1>
       <div className='product-grid'>
         {/* map per productsArr id make  <SingleProductCard /> */}
-        <SingleProductCard />
+        {productsArr.map((pObj) => (
+          // <SingleProductCard
+          //   key={pObj.id}
+          //   id={pObj.id}
+          //   title={pObj.title}
+          //   image={pObj.image}
+          //   price={pObj.price}
+          // />
+          <SingleProductCard key={pObj.id} {...pObj} />
+        ))}
       </div>
     </div>
   );
