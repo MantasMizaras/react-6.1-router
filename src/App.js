@@ -15,7 +15,7 @@ function App() {
       <Switch>
         {/* /products/1 => productId === 1 */}
         {/* /products/578 => productId === 578 */}
-        <Route path='/products/:productId'>
+        <Route path='/products/:productId/'>
           <SingleProductPage />
         </Route>
         <Route path='/products'>
