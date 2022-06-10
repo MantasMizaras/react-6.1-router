@@ -15,6 +15,9 @@ const MainNav = () => {
       <NavLink className='nav-link' to='/products'>
         Products
       </NavLink>
+      <NavLink className='nav-link' to='/cart'>
+        Cart Page
+      </NavLink>
     </nav>
   );
 };

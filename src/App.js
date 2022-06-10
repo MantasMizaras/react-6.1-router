@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import MainNav from './components/MainNav';
 import AboutPage from './pages/AboutPage';
+import CartPage from './pages/CartPage';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         {/* /products/1 => productId === 1 */}
         {/* /products/578 => productId === 578 */}
+        <Route path='/cart'>
+          <CartPage />
+        </Route>
         <Route path='/products/:productId/'>
           <SingleProductPage />
         </Route>
